@@ -1,0 +1,112 @@
+<html>
+<head>
+<script type="text/javascript" src="./js/jQuery.js" language="javascript"></script>
+<link rel="stylesheet" type="text/css" href="/static/TRA/style.css">
+<script type="text/javascript">
+//
+// 150525 0.5 Theo Deckers
+//            initial version
+// 150526 0.6 added panel select
+
+var release     = '0.6';
+var statusTimer = undefined;
+var fullTimer   = undefined;
+var lastFrame   = undefined;
+var lastState   = undefined;
+var panels=array={'Trampoline M'             : 0,
+                  'Trampoline W'             : 1,
+                  'Trampoline M2'            : 4,
+                  'Trampoline W2'            : 5,
+                  'Trampoline M3'            : 6,
+                  'Trampoline W3'            : 7,
+                  'Double mini-trampoline'   : 2,
+                  'Double mini-trampoline 2' : 8,
+                  'Double mini-trampoline 3' : 9,
+                  'Double mini-trampoline 4' : 10,
+                  'Tumbling'                 : 3,
+                  'Tumbling 2'               : 11,
+                  'Tumbling 3'               : 12,
+                  'Tumbling 4'               : 13
+		  }
+
+function manual() {
+      document.title = 'OBS score switcher rel. ' + release;
+}
+
+function full_video() {
+      document.title = 'full_video';
+}
+
+function announce() {
+      document.title = 'announce';
+}
+
+function video_and_score() {
+      document.title = 'video_and_score';
+}
+
+function return_to_full(sec) {
+      fullTimer = setTimeout(full_video,  sec * 1000)
+}
+
+function start_auto() {
+      statusTimer = setInterval(get_status, 500);
+}
+
+function stop_auto() {
+      clearInterval(statusTimer);
+}
+
+function get_status() {
+    var selected_panel = $("#panel_nr option:selected").text();
+    var panel = panels[selected_panel];
+
+    var url = window.location.protocol + '//' + window.location.host + '/api/panels/' + panel + '?fetch_panel_frames=true';
+    $.get(url, function(frmobj,txtstatus){
+          var frames = frmobj.Frames;
+	  for(frameId in frames) {
+             if(frames.hasOwnProperty(frameId)) {
+		rec = frames[frameId];
+		switch (rec.State) {
+		   case 1: // routine started
+		           if (rec.State != lastState || frameId != lastFrame) {
+		               announce();
+			       return_to_full(document.getElementById('announce_time').value);
+			   }
+		           break;
+		   case 2: // routine finished
+		           video_and_score();
+		           break;
+		   case 3: // score published
+		           if (rec.State != lastState || frameId != lastFrame) {
+			       return_to_full(document.getElementById('score_time').value);
+			   }
+		           break;
+	        }
+		lastState = rec.State;
+		lastFrame = frameId;
+             }
+          }
+    });
+}
+manual();
+</script>
+</head>
+<body>
+       <form>
+<script type="text/javascript">
+	           document.write('Judges panel : <select id="panel_nr">\n');
+                   var option_nr=0;
+		   for(var index in panels) {
+		       document.write('<option value=' + option_nr + '>' + index + '</option>\n');
+		       option_nr++;
+                   }
+                   document.write('</select><br><br>\n');
+</script>
+           Name  duration: <input type=number step=1 min=1 id="announce_time" title="announcement time" value=5 length=2><br><br>
+	   Score duration: <input type=number step=1 min=1 id="score_time"    title="score time" value=8><br><br>
+           <input type=button onclick=start_auto() value=auto>
+           <input type=button onclick="stop_auto();manual();"  value=manual>
+       </form>
+</body>
+</html>
