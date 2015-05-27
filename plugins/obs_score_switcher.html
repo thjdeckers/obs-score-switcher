@@ -93,20 +93,32 @@ manual();
 </script>
 </head>
 <body>
+       <main>
        <form>
-<script type="text/javascript">
-	           document.write('Judges panel : <select id="panel_nr">\n');
-                   var option_nr=0;
-		   for(var index in panels) {
-		       document.write('<option value=' + option_nr + '>' + index + '</option>\n');
-		       option_nr++;
-                   }
-                   document.write('</select><br><br>\n');
-</script>
+            <script type="text/javascript">
+	              document.write('Judges panel : <select id="panel_nr">\n');
+                var option_nr=0;
+		            for(var index in panels) {
+		                document.write('<option value=' + option_nr + '>' + index + '</option>\n');
+		                option_nr++;
+                }
+                document.write('</select><br><br>\n');
+           </script>
            Name  duration: <input type=number step=1 min=1 id="announce_time" title="announcement time" value=5 length=2><br><br>
-	   Score duration: <input type=number step=1 min=1 id="score_time"    title="score time" value=8><br><br>
+	       Score duration: <input type=number step=1 min=1 id="score_time"    title="score time" value=8><br><br>
            <input type=button onclick=start_auto() value=auto>
            <input type=button onclick="stop_auto();manual();"  value=manual>
        </form>
+       </main>
+       <footer>
+           <div class="copyright">
+              © 2013–2015 <img src="/static/img/assets/sporttech-logo-signonly-100.png" class="smalllogo"> <a href="https://sporttech.io">Sporttech Ltd</a>
+           </div>
+           <div class="email">
+               Plugin development by: 
+               <a href="http://nl.linkedin.com/in/TheoDeckers" >&nbsp;Theo Deckers</a> 
+               (<a href="mailto:oss@famdeckers.nl" target="_blank">oss@famdeckers.nl</a>)
+           </div>
+       </footer>
 </body>
 </html>
