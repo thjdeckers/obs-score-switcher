@@ -1,0 +1,15 @@
+<pluralCategory($i) {
+	$i == 0 ? "zero" :
+	$i == 1 ? "one" :
+	"other"
+}>
+
+<NavbarEdit "Wijzigen">
+<NavbarHome "Home">
+<NavbarExplore "Verkennen">
+<NavbarHelp "Help">
+<NavbarSignIn "Inloggen">
+<NavbarSignOut "Uitloggen">
+
+<Save "Opslaan">
+<Cancel "Annuleren">
