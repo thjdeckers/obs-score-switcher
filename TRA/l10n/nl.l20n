@@ -154,12 +154,12 @@
 <StageGroupsCount[pluralCategory($n)] {
 	zero:   "Geen groepen",
 	one:    "Een groep",
-	*other: "{{ $n }} groupen"
+	*other: "{{ $n }} groepen"
 }>
 
 <StageFinishedRoutinesCounter[pluralCategory($finished)] {
 	zero:   "{{ $finished }}/{{ $total }} oefeningen beeindigd",
-	one:    "{{ $finished }}/{{ $total }} oefeningen beeindigd",
+	one:    "{{ $finished }}/{{ $total }} oefening beeindigd",
 	*other: "{{ $finished }}/{{ $total }} oefeningen beeindigd"
 }>
 
@@ -173,7 +173,7 @@
 <StagePromptPasswordToRemoveParticipant "Wachtwoord invoeren om verwijderen deelnemer te bevestigen:">
 
 <StageDesiredPositionInGroupPrompt "Gewenste plaats in de groep:">
-<StageHowManyToAdvancePrompt "Hoeveel deelnemers/teams mogen naar het volgende onderdeel?">
+<StageHowManyToAdvancePrompt "Hoeveel deelnemers/teams mogen naar de volgende fase?">
 
 <StagePerformDrawConfirm "Trekking uitvoeren? Volgorde deelnemers zal willekeurig zijn.">
 <StageAssignNumbersInTeamConfirm "Team volgorde automatisch toekennen? Huidige nummers worden overschreven.">
@@ -271,7 +271,7 @@ Kies gymnast opnieuw in de automatisch aanvullen lijst om alleen hier te wijzige
 <ScoreboardTitlePlaceholder "Scorebord titel">
 
 <ScoreboardInvert "Voor en achtergrondkleur omwisselen">
-<ScoreboardInvertEditTitle "Wijzig omgewisselde kleuren scorebod">
+<ScoreboardInvertEditTitle "Wijzig omgewisselde kleuren scorebord">
 <ScoreboardInvertBlackOnWhite "Zwart op wit">
 <ScoreboardInvertWhiteOnBlack "Wit op zwart">
 
