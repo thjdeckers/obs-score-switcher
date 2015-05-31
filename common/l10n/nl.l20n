@@ -1,7 +1,7 @@
 <pluralCategory($i) {
 	$i == 0 ? "nul" :
 	$i == 1 ? "een" :
-	"other"
+	"overig"
 }>
 
 <NavbarEdit "Wijzigen">
