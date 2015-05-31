@@ -1,6 +1,6 @@
 <pluralCategory($i) {
-	$i == 0 ? "nul" :
-	$i == 1 ? "een" :
+	$i == 0 ? "zero" :
+	$i == 1 ? "one" :
 	"other"
 }>
 
