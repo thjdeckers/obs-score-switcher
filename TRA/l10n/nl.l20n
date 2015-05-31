@@ -1,0 +1,314 @@
+/*** common ***/
+
+<Password "Wachtwoord">
+
+
+/* roles */
+
+<RoleNameObserver "Toeschouwer">
+<RoleNameOC "Organisatie">
+<RoleNameJudge "Jury">
+<RoleNameScoreboard "Scoreboard beheerder">
+
+
+/* disciplines */
+
+<DisciplineCodeTRA "TRA">
+<DisciplineCodeSYN "SYN">
+<DisciplineCodeDMT "DMT">
+<DisciplineCodeTUM "TUM">
+
+<DisciplineNameTRA "Trampoline individueel">
+<DisciplineNameSYN "Trampoline synchroon">
+<DisciplineNameDMT "Dubbel mini-trampoline">
+<DisciplineNameTUM "Tumbling">
+
+
+/* stages */
+
+<StageKindQualification "Kwalificatie">
+<StageKindQuarterFinal "Kwart-finales">
+<StageKindSemiFinal "Halve-finales">
+<StageKindFinal "Finale">
+<StageKindTeamSemiFinal "Team halve-finales">
+<StageKindTeamFinal "Team finale">
+
+
+/* panels */
+
+<Panel "Panel">
+
+<PanelNameTRA_M "Trampoline M {{ $n == 1 ? '' : $n }}">
+<PanelNameTRA_W "Trampoline W {{ $n == 1 ? '' : $n  }}">
+<PanelNameDMT "{{ DisciplineNameDMT }} {{ $n == 1 ? '' : $n  }}">
+<PanelNameTUM "{{ DisciplineNameTUM }} {{ $n == 1 ? '' : $n  }}">
+
+<PanelShortNameTRA_M "TRA M {{ $n == 1 ? '' : $n }}">
+<PanelShortNameTRA_W "TRA W {{ $n == 1 ? '' : $n  }}">
+<PanelShortNameDMT "DMT {{ $n == 1 ? '' : $n  }}">
+<PanelShortNameTUM "DMT {{ $n == 1 ? '' : $n  }}">
+
+
+/* judges */
+
+<Judge "Jury">
+
+<JudgeCodeE "E{{ $n }}">
+<JudgeCodeD "D">
+<JudgeCodeT "T">
+
+<JudgeNameE "Uitvoering {{ $n }}">
+<JudgeNameD "Moeilijkheid">
+<JudgeNameT "ToF">
+
+
+/* deducts */
+<DeductNameS "S{{ $n }}">
+<DeductNameL "L">
+<DeductNameA "A">
+
+
+/* scoreboard tasks */
+
+<ScoreboardTaskBlank "Leeg">
+<ScoreboardTaskPanelCoverage "Jury uitslag en rangorde">
+<ScoreboardTaskLogo "Logo">
+<ScoreboardTaskPanelRankings "Rangorde">
+<ScoreboardTaskPanelGlimpse "Resultaten gymnast">
+
+
+/*** navigation ***/
+
+<CompetitionsNavlink "Wedstrijden">
+<AccreditationsNavlink "Accreditaties">
+<SettingsNavlinkTitle "Instellingen en Importeren/Exporteren">
+
+<StageLinkStartList "Start lijst">
+<StageLinkLiveScoring "Live scores">
+<StageLinkResults "Resultaten">
+<StageLinkTeamResults "Team resultaten">
+
+
+/*** reports ***/
+
+<ReportGeneratedByText "Gegenereerd met <a href='https://sporttech.io'>sporttech.io</a> Officieel score systeem op <b>{{ $now }}</b>.
+			Live resultaten op <a href='https://sporttech.io/explore'>www.sporttech.io/explore</a>.">
+
+
+/*** start list ***/
+
+<StageGroupNumber "Groep {{ $n }}">
+
+<AthleteSurname "Voornaam">
+<AthleteGivenName "Achternaam">
+<AthleteRepresenting "Uitkomend voor">
+
+
+/*** results ***/
+
+<ResultsTeamScore "Team Score">
+
+<ResultsExecution "E">
+<ResultsDifficulty "D">
+
+<ResultsTime "ToF">
+<ResultsSynchro "Synchroniteit">
+
+<ResultsTotal "Totaal">
+<ResultsScore "Score">
+
+
+/*** login page ***/
+
+<SignInHeader "Inloggen">
+
+<_signInAs "Inloggen als">
+<SignInAsObserver "{{ _signInAs }} {{ RoleNameObserver }}">
+<SignInAsOC "{{ _signInAs }} {{ RoleNameOC }}">
+<SignInAsJudge "{{ _signInAs }} {{ RoleNameJudge }}">
+<SignInAsScoreboard "{{ _signInAs }} {{ RoleNameScoreboard }}">
+
+
+/*** event overview page ***/
+
+<EventOverviewHeader "Event overzicht">
+
+<EventPromptPasswordToRemoveCompetition "Voer wachtwoord in om verwijderen wedstrijd te bevestigen:">
+<EventPromptPasswordToRemoveStage "Voer wachtwoord in om verwijderen onderdeel te bevestigen:">
+
+<EventTitlePlaceholder "Wedstrijd titel">
+<EventEditEventTitle "Wijzig wedstrijd titel">
+
+<OnlineOVSLinkTitle "Open de online versie bij sporttech.io">
+
+<EventSubtitlePlaceholder "Wedstrijd omschrijving">
+<EventEditEventSubtitle "Wijzig wedstrijd omschrijving">
+
+<EventEditCompetitionTitle "Wijzig wedstrijd titel">
+<CompetitionTitlePlaceholder "Wedstrijd titel">
+<RemoveCompetitionButtonTitle "Verwijder wedstrijd">
+
+<EventEditStageKind "Wijzig wedstrijd onderdeel">
+<RemoveStageButtonTitle "Verwijder onderdeel">
+
+<StageGroupsCount[pluralCategory($n)] {
+	zero:   "Geen groepen",
+	one:    "Een groep",
+	*other: "{{ $n }} groupen"
+}>
+
+<StageFinishedRoutinesCounter[pluralCategory($finished)] {
+	zero:   "{{ $finished }}/{{ $total }} oefeningen beeindigd",
+	one:    "{{ $finished }}/{{ $total }} oefeningen beeindigd",
+	*other: "{{ $finished }}/{{ $total }} oefeningen beeindigd"
+}>
+
+<AddCompetitionButtonTitle "Wedstrijd toevoegen">
+<AddStageButtonTitle "Onderdeel toevoegen">
+
+
+/*** stage overview page ***/
+
+<StagePromptPasswordToRemoveGroup "Wachtwoord invoeren om verwijderen groep te bevestigen:">
+<StagePromptPasswordToRemoveParticipant "Wachtwoord invoeren om verwijderen deelnemer te bevestigen:">
+
+<StageDesiredPositionInGroupPrompt "Gewenste plaats in de groep:">
+<StageHowManyToAdvancePrompt "Hoeveel deelnemers/teams mogen naar het volgende onderdeel?">
+
+<StagePerformDrawConfirm "Trekking uitvoeren? Volgorde deelnemers zal willekeurig zijn.">
+<StageAssignNumbersInTeamConfirm "Team volgorde automatisch toekennen? Huidige nummers worden overschreven.">
+<StageMixTeamsConfirm "Teams mixen? Deelnemer zal worden gemixed volgens de huidige volgorde in de teams en team volgorde in de groep.">
+<StageDivideInGroupsConfirm "Onderdeel in groepen verdelen? Bestaande groepen worden aangepast.">
+
+<StageReadyEraseDataConfirm "Alle scores wissen en oefening opnieuw beginnen?">
+
+<StageAthleteOverwriteConfirm "Overal in de wedstrijd {{ $from }} veranderen in {{ $to }}?
+Kies gymnast opnieuw in de automatisch aanvullen lijst om alleen hier te wijzigen.">
+
+
+<StageSelectRoutinePrompt "Kies een oefening om aftrek per sprong, moeilijkheid en ToF te tonen">
+
+<StageGroupTimePlaceholder "Groep tijd">
+<StageGroupTimeEditTitle "Wijzig groep tijd">
+
+<StageAddGroupButtonTitle "Groep toevoegen">
+<StageRemoveGroupButtonTitle "Groep verwijderen">
+
+<EditAthleteButtonTitle "Wijzig gymnast">
+
+<AddParticipantButtonTitle "Deelnemer toevoegen">
+<ReorderParticipantButtonTitle "Volgorde deelnemers aanpassen">
+<RemoveParticipantButtonTitle "Deelnemer verwijderen">
+
+<StageImportParticipantsFromFile "Importeren vanuit CSV of XLSX:">
+
+<StagePerformDrawButtonTitle "Trekking uitvoeren">
+<StageAssignNumbersInTeamButtonTitle "Volgorde bepalen in teams">
+<StageMixTeamsButtonTitle "Teams mixen">
+<StageDivideInGroupsButtonTitle "Verdeel in groepen">
+<StageAdvanceTopParticipantsButtonTitle "Beste deelnemers naar volgende fase">
+<StageAdvanceTopTeamsButtonTitle "Beste teams naar volgende fase">
+
+<StageExecutionLabel "E">
+<StageDifficultyLabel "D">
+<StageToFLabel "T">
+<StageSynchroLabel "S">
+
+<StageSyncWithTMDButtonTitle "ToF ophalen">
+
+<StageSkills "Sprongen">
+<StagePenalty "Strafpunten">
+<StageBonus "Bonus">
+
+<StageSelectPanelLabel "Kies panel">
+
+<StageStartRoutineButtonTitle "Start oefening">
+<StageRoutineFinishedButtonTitle "Oefening klaar">
+<StagePublishScoreButtonTitle "Publiceer score">
+<StageFailButtonTitle "Foute oefening">
+<StageEditButtonTitle "Wijzigen">
+
+
+/*** judge page ***/
+
+<JudgeDifficulty "Moeilijkheid">
+<JudgeTime "ToF">
+<JudgeSynchro "Synchroniteit">
+<JudgeTotal "Totaal">
+
+
+/*** settings page ***/
+
+<SettingsImportExport "Importeren / Exporteren">
+<SettingsImportAthletesFromEventDB "Importeer gymnasten uit vorige wedstrijd database:">
+<SettingsImportParticipantsFromFile "Importeer gymnasten uit een CSV of XLSX bestand <small>(<code>Achternaam, Voornaam, Uitkomend voor, Geboortedatum (bijv. 1965-03-19)</code> format)</small>:">
+<SettingsImportButton "Importeren">
+<SettingsExportToCSV "Exporteer wedstrijd data naar CSV">
+
+<SettingsEventConfiguration "Wedstrijd instellingen">
+<SettingsShowExternalAthleteIDs "Toon externe gymnast ID's">
+<SettingsShowFirstRoutineDescription "Toon «beschrijving» veld voor verplichte oefening">
+<SettingsShowAthleteCountryFlag "Toon vlag van gymnast in plaats van club logo">
+
+<SettingsHDShiftIntegration "HDShift integratie">
+<SettingsHDShiftIP "HDShift IP adressen:">
+
+<SettingsLiveStreaming "Video stream integratie">
+<SettingsAddVideButton "Video toevoegen">
+<SettingsRemoveVideoButtonTitle "Video verwijderen">
+<SettingsEditVideoYouTubeIDTitle "Wijzig YouTube video ID">
+<VideoYouTubeIDPlaceholder "YouTube video ID">
+<SettingsPromptPasswordToRemoveVideo "Wachtwoord invoeren om verwijderen video te bevestigen:">
+<SettingsEditVideoStartTimeTitle "Wijzig video start tijd">
+<VideoStartTimePlaceholder "Video start tijd">
+
+
+/*** scoreboard director page ***/
+
+<ScoreboardDirectorPageTitle "Scorebord instellingen">
+
+<ScoreboardTitleEditTitle "Wijzig scorebord titel">
+<ScoreboardTitlePlaceholder "Scorebord titel">
+
+<ScoreboardInvert "Voor en achtergrondkleur omwisselen">
+<ScoreboardInvertEditTitle "Wijzig omgewisselde kleuren scorebod">
+<ScoreboardInvertBlackOnWhite "Zwart op wit">
+<ScoreboardInvertWhiteOnBlack "Wit op zwart">
+
+<ScoreboardZoomEditTitle "Scorebord zoomfactor wijzigen">
+
+<ScoreboardTopMargin "Boven">
+<ScoreboardTopMarginEditTitle "Wijzig marge bovenkant scorebord">
+<ScoreboardLeftMargin "Links">
+<ScoreboardLeftMarginEditTitle "Wijzig marge linkerkant scoreboard">
+
+<ScoreboardIntroTiming "Intro">
+<ScoreboardIntroTimingEditTitle "Wijzig intro tijd scorebord (in panel modus)">
+<ScoreboardResultsTiming "Resultaten">
+<ScoreboardResultsTimingEditTitle "Wijzig resultaten tijd scorebord (in panel modus)">
+<ScoreboardRankingsTiming "Rangorde">
+<ScoreboardRankingsTimingEditTitle "Wijzig rangorde tijd scorebord (in panel modus)">
+
+<ScoreboardTaskEditTitle "Wijzig huidige scoreboad taak">
+<ScoreboardPanelsEditTitle "Wijzig scorebord panels">
+
+<AddScoreboardButtonTitle "Scorebord toevoegen">
+
+<ScoreboardPromptPasswordToRemoveScoreboard "Wachtwoord invoeren om verwijderen scorebord te bevestigen:">
+
+
+/*** scoreboard ***/
+
+<ScoreboardLiveResultsAt "Live resultaten op <a href='https://sporttech.io/explore'>www.sporttech.io/explore</a>">
+
+<ScoreboardRoutine "Oefening {{ $n }}">
+
+<ScoreboardSum "Î£">
+<ScoreboardRank "Stand">
+<ScoreboardTMDData "T">
+
+<ScoreboardExecution "Uitvoering">
+<ScoreboardDifficulty "Moeilijkheid">
+
+<ScoreboardPenalty "Strafpunten">
+<ScoreboardBonus "Bonus">

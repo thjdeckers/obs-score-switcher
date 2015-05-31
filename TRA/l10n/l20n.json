@@ -1,0 +1,14 @@
+{
+	"locales": [
+		"en",
+		"ru",
+		"ja",
+		"nl"
+	],
+	"default_locale": "nl",
+	"resources": [
+		"../../common/l10n/{{locale}}.l20n",
+		"./{{locale}}.l20n"
+	]
+}
+
